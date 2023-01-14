@@ -1,6 +1,9 @@
 install:
 	npm install
 
+install-client:
+	npm run install-client
+
 full-install:
 	make install & make install-client
 
