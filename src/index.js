@@ -7,7 +7,7 @@ import pool from './db.js';
 
 dayjs.extend(customParseFormat);
 
-const csvFilePath = '../data/players.csv';
+const csvFilePath = './data/players.csv';
 
 const run = async () => {
   const players = await fsp.readFile(csvFilePath, 'utf-8').then(neatCsv);
