@@ -19,31 +19,33 @@ const App = () => {
 
   return (
     <div className="container">
-      {players.length && (
-        <table className="table mt-5">
-          <caption>Игроки в онлайне</caption>
-          <thead>
-            <tr>
-              <th>Ник</th>
-              <th>Емейл</th>
-              <th>Зарегистрирован</th>
-              <th>Статус</th>
-            </tr>
-          </thead>
-          <tbody>
-            {players.map(({
-              nickname, email, registered, status,
-            }) => (
-              <tr key={nickname}>
-                <td>{nickname}</td>
-                <td>{email}</td>
-                <td>{dayjs(registered).format('DD.MM.YYYY HH:mm')}</td>
-                <td>{status}</td>
+      {players.length
+        ? (
+          <table className="table mt-5">
+            <caption>Игроки в онлайне</caption>
+            <thead>
+              <tr>
+                <th>Ник</th>
+                <th>Емейл</th>
+                <th>Зарегистрирован</th>
+                <th>Статус</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+            </thead>
+            <tbody>
+              {players.map(({
+                nickname, email, registered, status,
+              }) => (
+                <tr key={nickname}>
+                  <td>{nickname}</td>
+                  <td>{email}</td>
+                  <td>{dayjs(registered).format('DD.MM.YYYY HH:mm')}</td>
+                  <td>{status}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )
+        : <h4 className='mt-5'>Все офлайн</h4>}
     </div>
   );
 };
