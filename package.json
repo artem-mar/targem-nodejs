@@ -5,8 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "client": "npm run start --prefix client"
+    "start": "node ./src/index.js",
+    "client": "npm run start --prefix client",
+    "install-client": "npm install --prefix client"
   },
   "author": "Artem M.",
   "license": "ISC",
