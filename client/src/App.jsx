@@ -38,7 +38,7 @@ const App = () => {
                 <tr key={nickname}>
                   <td>{nickname}</td>
                   <td>{email}</td>
-                  <td>{dayjs(registered).format('DD.MM.YYYY HH:mm')}</td>
+                  <td>{dayjs(Number(registered)).format('DD.MM.YYYY HH:mm')}</td>
                   <td>{status}</td>
                 </tr>
               ))}
